@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
     <style>
         * { box-sizing: border-box; }
+        header, main, nav, footer, figure, figcaption, aside, section, article {display:block;}
         body {
             background-color: #F3F4F6;
             margin: 0;
@@ -36,6 +37,8 @@
             padding: 1rem;
             background-color: #0C5442;
             color: white;
+            text-align: center;
+            float: none;
         }
         nav ul {
             list-style-type: none;
@@ -65,6 +68,33 @@
             padding: 0.5rem;
             text-align: center;
             font-size: 0.875rem;
+        }
+        #mobile {display: none;}
+        #desktop {display: inline;}
+        @media only screen and (max-width: 37.5em) {
+            #mobile {display: inline;}
+            #desktop {display: none;}
+        }
+        @media only screen and (max-width: 64em) {
+            body {margin: 0; background-color: #FFFFFF;}
+            #wrapper {min-width: 0; width: auto; box-shadow: none; border: none;}
+            header {padding-top: 0.5em; padding-bottom: 0.5em; padding-left: 0; height: auto;}
+            h1 {letter-spacing: 0.1em; font-size: 2em;}
+            main {margin-left: 0; padding: 0.1em 1em; font-size: 90%;}
+            nav {float: none; width: auto; text-align: center; padding: 0;}
+            nav ul li {display: inline; padding: 0.25em 0.75em;}
+            #homeImage, #boardImage, #trainingImage {margin-left: 0; height: 200px;}
+            footer {margin-left: 0;}
+        }
+        @media only screen and (max-width: 37.5em) {
+            main {padding: 0.1em 1em; font-size: 90%;}
+            h1 {font-size: 2em;}
+            nav {padding: 0;}
+            nav ul li {display: block; margin: 0; border-bottom: 2px solid #330000;}
+            nav a {display: block;}
+            #homeImage, #boardImage, #trainingImage {display: none; background-image: none; height: 0;}
+            #mobile {display: inline;}
+            #desktop {display: none;}
         }
     </style>
 </head>
@@ -96,7 +126,8 @@
                     Green Pastures Stable and Training<br>
                     1252 Green Pasture Rd<br>
                     Amelia, Ohio 45102<br>
-                    888-555-0751
+                    <a id="mobile" href="tel:888-555-0751">888-555-0751</a>
+                    <span id="desktop">888-555-5555</span>
                 </address>
             </main>
         </div>
